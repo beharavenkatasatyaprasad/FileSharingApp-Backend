@@ -9,7 +9,7 @@ export const smtp = {
 
 
 
-export const url = 'https://filesharing-application.herokuapp.com/';
+export const url = 'https://filesharing-application.herokuapp.com';
 
 export const s3Config = {
     accessKeyId: accessKeyId,
