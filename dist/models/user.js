@@ -10,9 +10,9 @@ var _lodash = require('lodash');
 
 var _lodash2 = _interopRequireDefault(_lodash);
 
-var _bcrypt = require('bcryptjs');
+var _bcryptjs = require('bcryptjs');
 
-var _bcrypt2 = _interopRequireDefault(_bcrypt);
+var _bcryptjs2 = _interopRequireDefault(_bcryptjs);
 
 var _auth = require('./auth');
 
@@ -95,7 +95,7 @@ var User = function () {
 
 								if (err === null && user) {
 
-										var passwordCheck = _bcrypt2.default.compareSync(password, user.password); // false
+										var passwordCheck = _bcryptjs2.default.compareSync(password, user.password); // false
 
 
 										if (passwordCheck) {
@@ -190,7 +190,7 @@ var User = function () {
 						var model = this.model;
 						var db = this.app.db;
 
-						var hashPassword = _bcrypt2.default.hashSync(model.password, saltRounds);
+						var hashPassword = _bcryptjs2.default.hashSync(model.password, saltRounds);
 						model.password = hashPassword;
 
 						this.validate(function (errors) {

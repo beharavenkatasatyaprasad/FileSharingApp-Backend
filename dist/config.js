@@ -15,7 +15,7 @@ var smtp = exports.smtp = {
     }
 };
 
-var url = exports.url = 'http://localhost:3001';
+var url = exports.url = 'https://fileshareapp.heroku.app';
 
 var s3Config = exports.s3Config = {
     accessKeyId: _s3Config.accessKeyId,

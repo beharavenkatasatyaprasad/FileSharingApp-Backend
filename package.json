@@ -1,5 +1,5 @@
 {
-  "name": "es6-expressjs",
+  "name": "filesharingappbackend",
   "version": "1.0.0",
   "description": "ES6 Nodejs express 4 starter",
   "main": "dist",
@@ -24,7 +24,7 @@
       "no-unused-vars": 1
     }
   },
-  "author": "toan@tabvn.com",
+  "author": "satyaprasadbehara",
   "license": "ISC",
   "dependencies": {
     "archiver": "^5.2.0",
