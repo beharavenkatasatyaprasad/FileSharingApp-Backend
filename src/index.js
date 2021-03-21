@@ -7,7 +7,6 @@ import multer from 'multer'
 import path from 'path';
 
 
-// import {connect} from "./database";
 import AppRouter from './router'
 import nodemailer from 'nodemailer'
 import {smtp, s3Config, s3Region,s3Bucket} from './config'
@@ -31,7 +30,6 @@ const connect = (callback) => {
 
 };
 
-// Amazon S3 Setup
 import AWS from 'aws-sdk'
 import multerS3 from 'multer-s3'
 
@@ -44,17 +42,14 @@ const s3 = new AWS.S3();
 
 
 
-// Setup Email
 
 let email = nodemailer.createTransport(smtp);
 
 
-// File storage config
 
 const storageDir = path.join(__dirname, '..', 'storage');
 
 
-//const upload = multer({ storage: storageConfig }); // local upload.
 
 const upload = multer({
     storage: multerS3({
@@ -71,8 +66,6 @@ const upload = multer({
 })
 
 
-
-// End file storage config
 
 const PORT = 3000;
 const app = express();
@@ -97,7 +90,6 @@ app.upload = upload;
 app.email = email;
 app.s3 = s3;
 
-//Connect to the database.
 
 connect((err, client) => {
 
@@ -111,7 +103,6 @@ connect((err, client) => {
     app.set('db', db);
 
 
-    // init routers.
     new AppRouter(app);
 
 

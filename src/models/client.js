@@ -6,6 +6,6 @@ const url = 'mongodb+srv://satyaprasadbehara:RB9dY2QVDX8nDqHz@cluster0.mdyvh.mon
 const client =  mongoClient.connect(url, {
     useNewUrlParser: true,
     useUnifiedTopology: true
-}); //connect to db
+});
 
 export default client;

@@ -1,6 +1,5 @@
 import archiver from 'archiver'
 import _ from 'lodash'
-import path from 'path'
 import S3 from './s3'
 
 export default class FileArchiver{
@@ -35,10 +34,6 @@ export default class FileArchiver{
             const fileObject = s3Downloader.getObject(file);
 
             zip.append(fileObject, {name: _.get(file, 'originalName')});
-
-
-            /*const filePath = path.join(uploadDir, _.get(file, 'name'));
-            zip.file(filePath, {name: _.get(file, 'originalName')});*/
 
 
         });
